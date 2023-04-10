@@ -19,7 +19,7 @@ NGINXインストール時に配置される初期設定の ``server_name`` を�
 .. code-block:: cmdin
 
   # ファイルをバックアップします
-  sudo mv /etc/nginx/conf.d/default.conf  /etc/nginx/conf.d/default.conf-
+  sudo cp /etc/nginx/conf.d/default.conf  /etc/nginx/conf.d/default.conf-
 
   # vi コマンドでファイルを変更します
   sudo vi /etc/nginx/conf.d/default.conf
