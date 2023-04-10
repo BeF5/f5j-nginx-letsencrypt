@@ -4,7 +4,7 @@
 実施環境
 ====
 
--  利用するコマンド： snap
+-  利用するコマンド： sudo, curl, snap, diff, openssl
 -  NGINX Trialライセンスの取得、ラボ実施ユーザのHome Directoryへ配置
 
 動作環境
