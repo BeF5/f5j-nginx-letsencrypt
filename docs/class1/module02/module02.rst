@@ -329,6 +329,7 @@ HTTPS(TCP/443) への接続を確認します
 
   curl -v https://app.nginx-demo.site
 
+
 .. code-block:: bash
   :caption: 実行結果サンプル
   :linenos:
@@ -414,8 +415,8 @@ HTTPS(TCP/443) への接続を確認します
   </html>
   * Connection #0 to host app.nginx-demo.site left intact
 
-26-32行目で証明書の情報が確認できます。対象FQDNの情報がCNに示されており、31行目の issuer で Let's Encrypt の証明書であることが確認できます。
-46行目でHTTPステータスコード200を応答し、その後コンテンツが応答されていることが確認できます
+- 26-32行目で証明書の情報が確認できます。対象FQDNの情報がCNに示されており、31行目の issuer で Let's Encrypt の証明書であることが確認できます。
+- 46行目でHTTPステータスコード200を応答し、その後コンテンツが応答されていることが確認できます
 
 証明書の情報を確認します
 
@@ -426,7 +427,7 @@ HTTPS(TCP/443) への接続を確認します
 .. code-block:: bash
   :caption: 実行結果サンプル
   :linenos:
-  :emphasize-lines: 7-8, 16-35
+  :emphasize-lines: 7-11
 
   Certificate:
       Data:
@@ -484,5 +485,8 @@ HTTPS(TCP/443) への接続を確認します
       Signature Algorithm: sha256WithRSAEncryption
       Signature Value:
         ** 省略 **
+
+- 11行目でこの証明書のCNの情報、 7行目でこの証明書のIssuerが表示されています
+- 9-10行目に、この証明書の生成日時と失効日時が記述されています。
 
 上記で正しく証明書を適用でき、疎通できることが確認できました
