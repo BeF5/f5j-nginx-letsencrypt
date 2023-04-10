@@ -18,6 +18,8 @@
 動作環境構成図
 ----
 
+イラスト右側のNGINX Plusで各種操作を実施することを想定した手順を示します
+
    .. image:: ./media/nginx-letsencrypt-lab.png
       :width: 400
 

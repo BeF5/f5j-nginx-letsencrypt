@@ -16,15 +16,7 @@ F5 Labs - Index
 参考資料
 -----
 
-| `これから始めるNGINX技術解説～基本編 <https://www.slideshare.net/Nginx/nginx-nginx-back-to-basic-in-jp>`__ 
-| `これから始めるNGINX技術解説～基本編 Part2 <https://www.slideshare.net/Nginx/nginx-back-to-basic-2-part-2-japanese-webinar>`__ 
-| `NGINX (OSS版)ユーザのためのNGINX Plus/NGINX Controller入門 <https://www.slideshare.net/Nginx/why-nginx-plusnginx-controller-for-nginx-oss-users>`__
-- ``NGINX Controller`` は ``2022/07`` に ``EoL`` となっていることご留意ください
-
-Webinar(プレゼンテーション・デモ)
------
-
-`Update: Using Free Let’s Encrypt SSL/TLS Certificates with NGINX <https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/>`__
+- Blog `Update: Using Free Let’s Encrypt SSL/TLS Certificates with NGINX <https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/>`__
 
 NGINX セットアップガイド トップページ
 ====

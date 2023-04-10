@@ -78,7 +78,7 @@ NGINXのオプションを指定し、certbotを実行します
 .. code-block:: bash
   :caption: 実行結果サンプル
   :linenos:
-  :emphasize-lines: 1,13-14
+  :emphasize-lines: 3,10,19,25,28,31
 
   Saving debug log to /var/log/letsencrypt/letsencrypt.log
   Enter email address (used for urgent renewal and security notices)
@@ -133,6 +133,7 @@ NGINXのオプションを指定し、certbotを実行します
 - 25行目: 証明書の対象となるFQDNが表示されます。こちらの情報はNGINXの設定ファイルより自動的に取得されています
 - 28行目: 25行目のリストの中で今回対象とするFQDNを選択します。この例では ``1`` を選択します
 - 31行目: 証明書の生成が成功したことが出力されています。以降に証明書の配置されたPATHなどが表示されています
+
 
 3. Certbotの確認
 ====
@@ -206,7 +207,7 @@ NGINXのオプションを指定し、certbotを実行します
 過去に証明書の更新チェックは行われていないため、 ``LAST`` 、 ``PASSED`` が ``n/a`` となっています
 ``NEXT`` に表示された時刻が更新チェックがなされる時刻となります
 
-(Tips) この ``NEXTの時間を経過した後``、 ``systemctl status`` を確認すると、以下のように所定の時刻で certbot.renew が実行されたことを確認できます
+(Tips) この ``NEXT`` の時間を経過した後、 ``systemctl status`` を確認すると、以下のように所定の時刻で certbot.renew が実行されたことを確認できます
 
 .. code-block:: cmdin
 
@@ -215,6 +216,7 @@ NGINXのオプションを指定し、certbotを実行します
 .. code-block:: bash
   :caption: 実行結果サンプル
   :linenos:
+  :emphasize-lines: 9-11
 
   ○ snap.certbot.renew.service - Service for snap application certbot.renew
        Loaded: loaded (/etc/systemd/system/snap.certbot.renew.service; static)
@@ -291,7 +293,7 @@ HTTP(TCP/80) への接続を確認します
 .. code-block:: bash
   :caption: 実行結果サンプル
   :linenos:
-  :emphasize-lines: 7-8, 16-35
+  :emphasize-lines: 9,15,18,20
 
   *   Trying 13.231.152.79:80...
   * Connected to app.nginx-demo.site (13.231.152.79) port 80 (#0)
@@ -318,6 +320,7 @@ HTTP(TCP/80) への接続を確認します
   </html>
   * Connection #0 to host app.nginx-demo.site left intact
   
+HTTPステータスコード ``301`` が応答され、 ``https://app.nginx-demo.site/`` へのリダイレクトが実施されています
   
   
 HTTPS(TCP/443) への接続を確認します
@@ -329,7 +332,7 @@ HTTPS(TCP/443) への接続を確認します
 .. code-block:: bash
   :caption: 実行結果サンプル
   :linenos:
-  :emphasize-lines: 7-8, 16-35
+  :emphasize-lines: 26-32,
 
   *   Trying 13.231.152.79:443...
   * Connected to app.nginx-demo.site (13.231.152.79) port 443 (#0)
@@ -411,6 +414,9 @@ HTTPS(TCP/443) への接続を確認します
   </html>
   * Connection #0 to host app.nginx-demo.site left intact
 
+26-32行目で証明書の情報が確認できます。対象FQDNの情報がCNに示されており、31行目の issuer で Let's Encrypt の証明書であることが確認できます。
+46行目でHTTPステータスコード200を応答し、その後コンテンツが応答されていることが確認できます
+
 証明書の情報を確認します
 
 .. code-block:: cmdin
@@ -478,3 +484,5 @@ HTTPS(TCP/443) への接続を確認します
       Signature Algorithm: sha256WithRSAEncryption
       Signature Value:
         ** 省略 **
+
+上記で正しく証明書を適用でき、疎通できることが確認できました
